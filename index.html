@@ -34,7 +34,13 @@
             font-size: 2.5em;
             width: 120px;
             text-align: center;
-            color: black;
+            color: white;
+            background-color: gray;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .counter span {
+            display: block;
         }
     </style>
 </head>
@@ -42,21 +48,21 @@
     <h1>Kickbag Arbon</h1>
     
     <div class="counter-container">
-        <button class="button increment" onclick="increment('S')">+1 Größe S</button>
-        <span id="counterS" class="counter">0</span>
-        <button class="button decrement" onclick="decrement('S')">-1 Größe S</button>
+        <button class="button increment" onclick="increment('S')">+1</button>
+        <div id="counterS" class="counter"><span>S</span><span>0</span></div>
+        <button class="button decrement" onclick="decrement('S')">-1</button>
     </div>
     
     <div class="counter-container">
-        <button class="button increment" onclick="increment('M')">+1 Größe M</button>
-        <span id="counterM" class="counter">0</span>
-        <button class="button decrement" onclick="decrement('M')">-1 Größe M</button>
+        <button class="button increment" onclick="increment('M')">+1</button>
+        <div id="counterM" class="counter"><span>M</span><span>0</span></div>
+        <button class="button decrement" onclick="decrement('M')">-1</button>
     </div>
     
     <div class="counter-container">
-        <button class="button increment" onclick="increment('L')">+1 Größe L</button>
-        <span id="counterL" class="counter">0</span>
-        <button class="button decrement" onclick="decrement('L')">-1 Größe L</button>
+        <button class="button increment" onclick="increment('L')">+1</button>
+        <div id="counterL" class="counter"><span>L</span><span>0</span></div>
+        <button class="button decrement" onclick="decrement('L')">-1</button>
     </div>
 
     <script>
@@ -64,13 +70,13 @@
 
         function increment(size) {
             counts[size]++;
-            document.getElementById('counter' + size).innerText = counts[size];
+            document.getElementById('counter' + size).children[1].innerText = counts[size];
         }
 
         function decrement(size) {
             if (counts[size] > 0) {
                 counts[size]--;
-                document.getElementById('counter' + size).innerText = counts[size];
+                document.getElementById('counter' + size).children[1].innerText = counts[size];
             }
         }
     </script>
