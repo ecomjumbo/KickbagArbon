@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paketzähler</title>
+    <title>Kickbag Arbon</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,8 +16,8 @@
             margin: 20px 0;
         }
         .button {
-            font-size: 2em;
-            padding: 20px;
+            font-size: 2.5em;
+            padding: 25px;
             margin: 0 10px;
             border: none;
             cursor: pointer;
@@ -31,18 +31,10 @@
             color: white;
         }
         .counter {
-            font-size: 2em;
-            width: 100px;
+            font-size: 2.5em;
+            width: 120px;
             text-align: center;
-        }
-        .counter.s {
-            color: blue;
-        }
-        .counter.m {
-            color: orange;
-        }
-        .counter.l {
-            color: purple;
+            color: black;
         }
     </style>
 </head>
@@ -51,19 +43,19 @@
     
     <div class="counter-container">
         <button class="button increment" onclick="increment('S')">+1</button>
-        <span id="counterS" class="counter s">0</span>
+        <span id="counterS" class="counter">0</span>
         <button class="button decrement" onclick="decrement('S')">-1</button>
     </div>
     
     <div class="counter-container">
         <button class="button increment" onclick="increment('M')">+1</button>
-        <span id="counterM" class="counter m">0</span>
+        <span id="counterM" class="counter">0</span>
         <button class="button decrement" onclick="decrement('M')">-1</button>
     </div>
     
     <div class="counter-container">
         <button class="button increment" onclick="increment('L')">+1</button>
-        <span id="counterL" class="counter l">0</span>
+        <span id="counterL" class="counter">0</span>
         <button class="button decrement" onclick="decrement('L')">-1</button>
     </div>
 
