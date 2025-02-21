@@ -7,16 +7,35 @@
 </head>
 <body>
     <h1>Paketzähler</h1>
-    <button onclick="increment()">Knopf 1</button>
-    <button onclick="increment()">Knopf 2</button>
-    <button onclick="increment()">Knopf 3</button>
-    <p>Gezählte Pakete: <span id="counter">0</span></p>
+    
+    <h2>Größe S</h2>
+    <button onclick="increment('S')">+1</button>
+    <button onclick="decrement('S')">-1</button>
+    <p>Gezählte Pakete Größe S: <span id="counterS">0</span></p>
+    
+    <h2>Größe M</h2>
+    <button onclick="increment('M')">+1</button>
+    <button onclick="decrement('M')">-1</button>
+    <p>Gezählte Pakete Größe M: <span id="counterM">0</span></p>
+    
+    <h2>Größe L</h2>
+    <button onclick="increment('L')">+1</button>
+    <button onclick="decrement('L')">-1</button>
+    <p>Gezählte Pakete Größe L: <span id="counterL">0</span></p>
 
     <script>
-        let count = 0;
-        function increment() {
-            count++;
-            document.getElementById('counter').innerText = count;
+        let counts = { S: 0, M: 0, L: 0 };
+
+        function increment(size) {
+            counts[size]++;
+            document.getElementById('counter' + size).innerText = counts[size];
+        }
+
+        function decrement(size) {
+            if (counts[size] > 0) {
+                counts[size]--;
+                document.getElementById('counter' + size).innerText = counts[size];
+            }
         }
     </script>
 </body>
