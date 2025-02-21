@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paketzähler</title>
+</head>
+<body>
+    <h1>Paketzähler</h1>
+    <button onclick="increment()">Knopf 1</button>
+    <button onclick="increment()">Knopf 2</button>
+    <button onclick="increment()">Knopf 3</button>
+    <p>Gezählte Pakete: <span id="counter">0</span></p>
+
+    <script>
+        let count = 0;
+        function increment() {
+            count++;
+            document.getElementById('counter').innerText = count;
+        }
+    </script>
+</body>
+</html>
