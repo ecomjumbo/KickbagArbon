@@ -71,13 +71,38 @@
         function increment(size) {
             counts[size]++;
             document.getElementById('counter' + size).children[1].innerText = counts[size];
+            triggerGitHubAction(size, counts[size]);
         }
 
         function decrement(size) {
             if (counts[size] > 0) {
                 counts[size]--;
                 document.getElementById('counter' + size).children[1].innerText = counts[size];
+                triggerGitHubAction(size, counts[size]);
             }
+        }
+
+        function triggerGitHubAction(size, count) {
+            fetch('https://api.github.com/repos/DEIN_USERNAME/DEIN_REPOSITORY/dispatches', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'token DEIN_GITHUB_TOKEN',
+                    'Accept': 'application/vnd.github.v3+json'
+                },
+                body: JSON.stringify({
+                    event_type: 'update_counter',
+                    client_payload: {
+                        size: size,
+                        count: count
+                    }
+                })
+            }).then(response => {
+                if (response.ok) {
+                    console.log('Workflow erfolgreich ausgelöst');
+                } else {
+                    console.error('Fehler beim Auslösen des Workflows');
+                }
+            });
         }
     </script>
 </body>   
